@@ -1,0 +1,49 @@
+---
+// Methods.astro
+const methods = [
+  {
+    title: "Trabajo en Equipo",
+    description: "Colaboro efectivamente con otros, compartiendo ideas y apoyando el crecimiento del grupo.",
+    icon: "🤝",
+  },
+  {
+    title: "Aprendizaje Continuo",
+    description: "Siempre busco mejorar mis habilidades y mantenerme actualizado en nuevas tecnologías.",
+    icon: "📚",
+  },
+  {
+    title: "Código Limpio",
+    description: "Escribo código legible, mantenible y documentado para proyectos sostenibles a largo plazo.",
+    icon: "💻",
+  },
+  {
+    title: "Innovación",
+    description: "Busco soluciones creativas y eficientes a problemas complejos.",
+    icon: "🚀",
+  },
+  {
+    title: "Responsabilidad",
+    description: "Cumplo con plazos y compromisos, asegurando la calidad del trabajo entregado.",
+    icon: "✅",
+  },
+  {
+    title: "Comunicación Efectiva",
+    description: "Expreso ideas de manera clara y receptiva, fomentando un ambiente productivo.",
+    icon: "🗣️",
+  },
+];
+---
+
+<section class="py-20 px-6 md:px-12 lg:px-24 text-white">
+  <h2 class="text-4xl md:text-5xl font-light text-center mb-16">Mis Métodos de Trabajo</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {methods.map(method => (
+      <div class="bg-gray-800/80 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 flex flex-col items-start gap-4">
+        <div class="text-4xl">{method.icon}</div>
+        <h3 class="text-xl font-semibold">{method.title}</h3>
+        <p class="text-gray-300">{method.description}</p>
+      </div>
+    ))}
+  </div>
+</section>

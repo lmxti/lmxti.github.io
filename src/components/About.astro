@@ -1,0 +1,266 @@
+---
+// Datos de las secciones
+const intereses = [
+  "Desarrollo web, creación de aplicaciones web y móviles escalables.",
+  "Analisis de datos, desde el procesamiento, transformación y visualización de datos",
+  "Exploración de nuevas áreas y tecnologias como IA para proyectos innovadores y prácticos"
+];
+
+const trabajo = [
+  "Código limpio y arquitectura escalable",
+  "Trabajo colaborativo y comunicación efectiva",
+  "Aprendizaje continuo y resolución de problemas"
+];
+
+const habilidades = [
+  "Organización y planificación de proyectos y tareas.",
+  "Documentación clara y estructurada para facilitar comprensión de procesos.",
+  "Capacidad de adaptación a nuevos desafíos y tecnologías.",
+  "Curiosidad y experimentación constante para mejorar procesos."
+];
+---
+<section class="text-white relative overflow-hidden font-mono" id="about">
+  <div class="flex flex-col md:flex-row relative">
+
+    <!-- GLITCH -->
+    <div class="w-full md:w-1/2 h-80 md:h-screen relative md:absolute md:top-0 md:right-0 overflow-hidden z-0">
+      <canvas class="absolute inset-0 w-full h-full bg-transparent" id="matrix-section"></canvas>
+    </div>
+    
+    <!-- INFORMACION -->
+    <div class="w-full md:w-1/2 p-5 md:p-10 flex flex-col justify-center z-10 relative">
+      <h2 class="text-3xl md:text-6xl font-light mb-8 md:mb-16 text-white">Sobre mí</h2>
+
+      <!-- Intereses -->
+      <div class="service-item mb-4 md:mb-6 border border-gray-600 rounded-lg bg-gray-800/90 overflow-hidden">
+        <div class="service-header flex items-center p-3 md:p-5 cursor-pointer transition-all duration-300 hover:bg-gray-700/80">
+          <svg class="w-5 h-5 md:w-6 md:h-6 mr-3 md:mr-4 fill-violet-500" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span class="text-lg md:text-xl flex-1">Intereses</span>
+          <span class="service-arrow transition-transform duration-300 text-sm md:text-base">▼</span>
+        </div>
+        <div class="service-content max-h-0 overflow-hidden transition-all duration-300 bg-gray-900/90">
+          <ul class="p-4 md:p-6 list-none m-0">
+            {intereses.map(item => (
+              <li class="mb-2 md:mb-3 text-sm md:text-base text-gray-300 relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-indigo-500">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Trabajo -->
+      <div class="service-item mb-4 md:mb-6 border border-gray-600 rounded-lg bg-gray-800/90 overflow-hidden">
+        <div class="service-header flex items-center p-3 md:p-5 cursor-pointer transition-all duration-300 hover:bg-gray-700/80">
+          <svg class="w-5 h-5 md:w-6 md:h-6 mr-3 md:mr-4 fill-blue-500" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          <span class="text-lg md:text-xl flex-1">Enfoque</span>
+          <span class="service-arrow transition-transform duration-300 text-sm md:text-base">▼</span>
+        </div>
+        <div class="service-content max-h-0 overflow-hidden transition-all duration-300 bg-gray-900/90">
+          <ul class="p-4 md:p-6 list-none m-0">
+            {trabajo.map(item => (
+              <li class="mb-2 md:mb-3 text-sm md:text-base text-gray-300 relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-indigo-500">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Habilidades -->
+      <div class="service-item mb-4 md:mb-6 border border-gray-600 rounded-lg bg-gray-800/90 overflow-hidden">
+        <div class="service-header flex items-center p-3 md:p-5 cursor-pointer transition-all duration-300 hover:bg-gray-700/80">
+          <svg class="w-5 h-5 md:w-6 md:h-6 mr-3 md:mr-4 fill-emerald-500" viewBox="0 0 24 24">
+            <path d="M12 2L2 7v7c0 5 5 9 10 9s10-4 10-9V7l-10-5zM12 22c-4.5 0-8-3.5-8-8V8.5l8-4 8 4V14c0 4.5-3.5 8-8 8z"/>
+          </svg>
+          <span class="text-lg md:text-xl flex-1">Habilidades</span>
+          <span class="service-arrow transition-transform duration-300 text-sm md:text-base">▼</span>
+        </div>
+        <div class="service-content max-h-0 overflow-hidden transition-all duration-300 bg-gray-900/90">
+          <ul class="p-4 md:p-6 list-none m-0">
+            {habilidades.map(item => (
+              <li class="mb-2 md:mb-3 text-sm md:text-base text-gray-300 relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-indigo-500">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<style>
+    .service-item.expanded .service-arrow {
+        transform: rotate(180deg);
+    }
+
+    .service-item.expanded .service-content {
+        max-height: 300px;
+    }
+
+    @media (min-width: 768px) {
+        .service-item.expanded .service-content {
+            max-height: 300px;
+        }
+    }
+</style>
+
+<script type="module">
+    // Esperamos a que el componente esté montado
+    document.addEventListener('DOMContentLoaded', function() {
+        // Matrix Glitch Effect (no falling, just changing letters)
+        const canvas = document.getElementById('matrix-section');
+        if (!canvas) return;
+        
+        const ctx = canvas.getContext('2d');
+
+        // Función para actualizar el tamaño del canvas
+        function resizeCanvas() {
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+        }
+
+        resizeCanvas();
+
+        // Characters for the glitch effect
+        const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|]}";
+        const matrixArray = matrix.split("");
+
+        const fontSize = 16;
+        const cols = Math.floor(canvas.width / fontSize);
+        const rows = Math.floor(canvas.height / fontSize);
+        
+        // Grid to store characters
+        let grid = [];
+        
+        // Initialize grid with random characters
+        function initGrid() {
+            grid = [];
+            for (let y = 0; y < rows; y++) {
+                grid[y] = [];
+                for (let x = 0; x < cols; x++) {
+                    grid[y][x] = {
+                        char: matrixArray[Math.floor(Math.random() * matrixArray.length)],
+                        opacity: Math.random() * 0.8 + 0.2
+                    };
+                }
+            }
+        }
+
+        initGrid();
+
+        function drawGlitchMatrix() {
+            if (!canvas.width || !canvas.height) return;
+            
+            // Clear canvas
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.font = fontSize + 'px Courier New';
+            
+            // Draw and randomly change characters
+            for (let y = 0; y < rows; y++) {
+                for (let x = 0; x < cols; x++) {
+                    if (!grid[y] || !grid[y][x]) continue;
+                    
+                    const cell = grid[y][x];
+                    
+                    // Randomly change character
+                    if (Math.random() < 0.05) { // 5% chance to change
+                        cell.char = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+                        cell.opacity = Math.random() * 0.8 + 0.2;
+                    }
+                    
+                    // Set color with opacity (cyan)
+                    const alpha = cell.opacity;
+                    ctx.fillStyle = `rgba(0, 255, 255, ${alpha})`; // Cyan color
+                    
+                    // Occasionally make some characters brighter
+                    if (Math.random() < 0.02) {
+                        ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`; // White highlight
+                    }
+                    
+                    ctx.fillText(cell.char, x * fontSize, (y + 1) * fontSize);
+                }
+            }
+        }
+
+        // Start glitch animation
+        const matrixInterval = setInterval(drawGlitchMatrix, 100); // Slower for glitch effect
+
+        // Service accordion functionality
+        const serviceItems = document.querySelectorAll('.service-item');
+        
+        serviceItems.forEach(item => {
+            const header = item.querySelector('.service-header');
+            
+            header.addEventListener('click', () => {
+                const isExpanded = item.classList.contains('expanded');
+                
+                // Close all other items in this section
+                serviceItems.forEach(otherItem => {
+                    otherItem.classList.remove('expanded');
+                });
+                
+                // Toggle current item
+                if (!isExpanded) {
+                    item.classList.add('expanded');
+                }
+            });
+        });
+
+        // Handle window resize
+        const resizeObserver = new ResizeObserver(() => {
+            resizeCanvas();
+            const newCols = Math.floor(canvas.width / fontSize);
+            const newRows = Math.floor(canvas.height / fontSize);
+            if (newCols !== cols || newRows !== rows) {
+                initGrid();
+            }
+        });
+        
+        resizeObserver.observe(canvas);
+
+        // Add some glitch effects to text randomly
+        function addGlitchEffect() {
+            const title = document.querySelector('.section-title');
+            if (!title) return;
+            
+            const originalText = title.textContent;
+            
+            const glitchInterval = setInterval(() => {
+                if (Math.random() < 0.02) { // 2% chance every interval
+                    let glitchedText = '';
+                    for (let i = 0; i < originalText.length; i++) {
+                        if (Math.random() < 0.1 && originalText[i] !== ' ') {
+                            glitchedText += matrixArray[Math.floor(Math.random() * matrixArray.length)];
+                        } else {
+                            glitchedText += originalText[i];
+                        }
+                    }
+                    title.textContent = glitchedText;
+                    
+                    setTimeout(() => {
+                        title.textContent = originalText;
+                    }, 100);
+                }
+            }, 100);
+
+            // Cleanup function
+            return () => {
+                clearInterval(glitchInterval);
+                clearInterval(matrixInterval);
+            };
+        }
+
+        addGlitchEffect();
+    });
+</script>

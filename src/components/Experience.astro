@@ -1,0 +1,50 @@
+---
+const techs = [
+   { name: "Python", iconClass: "devicon-python-plain" },
+   { name: "PostgreSQL", iconClass: "devicon-postgresql-plain" },
+   { name: "VBA", iconClass: "/icons/vba.svg" },        // coloca vba.svg en public/icons/
+   { name: "Power BI", iconClass: "/icons/powerbi.svg" } // coloca powerbi.svg en public/icons/
+];
+---
+
+<section class="py-20 px-6 sm:px-12 lg:px-24 text-white">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Imagen a la izquierda -->
+    <div class="flex justify-center md:justify-start">
+      <img src="/hero.png" alt="Trabajando en Excel" class="rounded-xl shadow-2xl w-full max-w-md"/>
+    </div>
+    
+    <!-- Contenido a la derecha -->
+    <div class="space-y-6">
+      <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+        Mi Práctica Profesional
+      </h2>
+      <p class="text-gray-300 leading-relaxed text-lg">
+        Durante mi práctica profesional en <span class="font-semibold text-white">Havas Group Chile</span>, me enfoqué en el desarrollo de soluciones de análisis de datos y automatización de procesos. Aprendí y apliqué herramientas como VBA, Power BI, Excel y Python para optimizar reportes, crear dashboards interactivos y mejorar la eficiencia de los flujos de trabajo internos.
+      </p>
+
+      <!-- Lista de habilidades con íconos -->
+      <div class="flex flex-wrap gap-4 mt-4">
+        {techs.map(tech => (
+          <div class="flex items-center gap-2 bg-gray-800/70 px-4 py-2 rounded-lg shadow-md">
+            {tech.iconClass.startsWith("/icons") ? (
+              <img src={tech.iconClass} alt={tech.name} class="w-6 h-6"/>
+            ) : (
+              <i class={`${tech.iconClass} text-2xl`}></i>
+            )}
+            <span class="text-white font-medium">{tech.name}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Detalle de logros -->
+      <ul class="mt-6 space-y-3 list-disc list-inside text-gray-300">
+        <li>Automatización de reportes en Excel mediante macros en VBA.</li>
+        <li>Creación de dashboards interactivos en Power BI para análisis de KPIs.</li>
+        <li>Procesamiento y limpieza de datos utilizando Python.</li>
+        <li>Optimización de procesos internos, reduciendo tiempos de trabajo en un 30%.</li>
+      </ul>
+    </div>
+  </div>
+</section>

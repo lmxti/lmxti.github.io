@@ -1,0 +1,69 @@
+---
+const techs = [
+   { name: "Git", iconClass: "devicon-git-plain colored" },
+   { name: "Python", iconClass: "devicon-python-plain colored" },
+   { name: "JavaScript", iconClass: "devicon-javascript-plain colored" },
+   { name: "Node.js", iconClass: "devicon-nodejs-plain colored" },
+   { name: "TypeScript", iconClass: "devicon-typescript-plain colored" },
+   { name: "Express", iconClass: "devicon-express-original colored" },
+   { name: "Sass", iconClass: "devicon-sass-original colored" },
+   { name: "TailwindCSS", iconClass: "devicon-tailwindcss-plain colored" },
+   { name: "React", iconClass: "devicon-react-original colored" },
+   { name: "NextJS", iconClass: "devicon-nextjs-plain" },
+   { name: "Astro", iconClass: "devicon-astro-plain colored" },
+   { name: "VueJS", iconClass: "devicon-vuejs-plain colored" },
+   { name: "React Native", iconClass: "devicon-react-original colored" },
+   { name: "Expo", iconClass: "devicon-expo-original" },
+   { name: "MongoDB", iconClass: "devicon-mongodb-plain colored" },
+   { name: "PostgreSQL", iconClass: "devicon-postgresql-plain colored" }
+
+];
+---
+
+<section class="w-full overflow-hidden mt-6" id="tecnologias">
+  <div class="relative flex">
+    <!-- Primera copia de las tecnologías -->
+    <div class="flex animate-scroll-left whitespace-nowrap">
+      {techs.map((tech) => (
+        <div class="flex flex-row items-center justify-center mx-8 min-w-[120px]">
+          <div class="w-16 h-16 flex items-center justify-center mb-3 rounded-lg  p-2 gap-2  transition-colors duration-300 text-white  hover:text-blue-500">
+              <i class={`${tech.iconClass} text-5xl`}></i>
+              <span class="text-sm font-light text-center ">{tech.name}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Segunda copia para el efecto infinito -->
+    <div class="flex animate-scroll-left whitespace-nowrap" aria-hidden="true">
+      {techs.map((tech) => (
+        <div class="flex flex-col items-center justify-center mx-8 min-w-[120px]">
+          <div class="w-16 h-16 flex items-center justify-center mb-3 rounded-lg  p-2 gap-2  transition-colors duration-300 text-white  hover:text-blue-500">
+              <i class={`${tech.iconClass} text-5xl`}></i>
+              <span class="text-sm font-light text-center ">{tech.name}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .animate-scroll-left {
+    animation: scroll-left 30s linear infinite;
+  }
+  
+  /* Pausar animación al hacer hover */
+  section:hover .animate-scroll-left {
+    animation-play-state: paused;
+  }
+</style>

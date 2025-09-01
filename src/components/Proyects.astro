@@ -1,0 +1,43 @@
+---
+import { proyects } from "@/data/proyects";
+---
+
+<section id="proyectos" class="mt-8 p-4">
+  <div class="text-center mb-8">
+    <h2 class="text-3xl md:text-4xl font-light text-white">Mis Proyectos</h2>
+    <p class="text-gray-400 mt-2 max-w-2xl mx-auto text-sm md:text-base">
+      Algunos de los proyectos en los proyectos que he desarrollado
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {proyects.map((proj, index) => (
+      <div class="bg-zinc-900 rounded-xl shadow-md hover:shadow-lg transition p-4 flex flex-col">
+
+        <div class="w-full h-48 overflow-hidden rounded-md">
+          <img src={proj.imagenes[0]} alt={`Imagen de ${proj.name}`} class="w-full h-full object-contain transition-transform duration-500 hover:scale-105"/>
+        </div>
+
+        <div class="mt-4 flex flex-col flex-1">
+          <h3 class="text-white text-lg font-semibold">{proj.name}</h3>
+          <p class="text-gray-400 text-sm flex-1">{proj.descripcion}</p>
+
+          <div class="mt-3 flex flex-wrap gap-2">
+            {proj.tecnologias.map((tech) => (
+              <span class=" bg-zinc-700 hover:bg-zinc-800 border text-white text-xs px-2 py-1 rounded-full transition-all duration-400">
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          {proj.enlace && (
+            <a href={proj.enlace} target="_blank" class="mt-4 inline-block text-center bg-zinc-700 text-white px-4 py-2 rounded-lg hover:bg-zinc-950 transition-all duration-400">
+              Más información
+            </a>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+  
+</section>

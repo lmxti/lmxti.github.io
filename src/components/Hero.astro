@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import HeroImg from "@assets/hero3.png";
+
+---
+<section class="relative h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 pt-20 md:pt-0" id="hero">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center w-full max-w-7xl mx-auto">
+    <!--------------------------------------------------- Left Side Column --------------------------------------------------->
+    <div class="flex flex-col items-start space-y-6 md:w-fit md:mx-auto">
+      <div class="space-y-2 font-lato">
+        <h1 class="text-8xl md:text-9xl text-gray-200">Hola!</h1>
+        <h2 class="text-6xl md:text-6xl text-gray-200">
+          Soy <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-bold">Matías S. Martín</span>
+        </h2>
+        <h3 class="font-extralight text-2xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 leading-relaxed overflow-hidden whitespace-nowrap border-r-4 border-black animate-typing w-fit">
+          Ingeniero Civil en Informática
+        </h3>
+      </div>
+      <!-- Badges -->
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 text-sm font-medium rounded-full bg-blue-700/20 text-blue-400 border border-blue-500 opacity-0 translate-y-4 animate-fade-in-up motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none" style="animation-delay:200ms">
+          Desarrollador Web Full Stack
+        </span>
+        <!-- <span class="px-4 py-2 text-sm font-medium rounded-full bg-green-700/20 text-green-400 border border-green-500 opacity-0 translate-y-4 animate-fade-in-up motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none" style="animation-delay:400ms">
+          Software Engineer
+        </span> -->
+        <span class="px-4 py-2 text-sm font-medium rounded-full bg-purple-700/20 text-purple-400 border border-purple-500 opacity-0 translate-y-4 animate-fade-in-up motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none" style="animation-delay:600ms">
+          Data & Analytics
+        </span>
+        <span class="px-4 py-2 text-sm font-medium rounded-full bg-cyan-700/20 text-cyan-400 border border-cyan-500 opacity-0 translate-y-4 animate-fade-in-up motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none" style="animation-delay:800ms">
+          Python Developer
+        </span>
+      </div>
+      <!-- Botones -->
+      <!-- <div class="flex flex-col md:flex-row w-full gap-4">
+        <a href="#proyectos" class="flex-1 py-4 text-white text-lg rounded-lg bg-blue-700 hover:bg-blue-800 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300  text-center">
+          Ver proyectos
+        </a>
+        <a href="https://www.linkedin.com/in/lmxti" target="_blank" class="flex-1 py-4 px-6 text-blue-500 hover:text-white text-lg rounded-lg border-2 border-blue-700 hover:bg-blue-700  hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+          LinkedIn
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 7h4.56v16H.22V7zM7.22 7h4.37v2.18h.06c.61-1.16 2.11-2.39 4.35-2.39 4.65 0 5.5 3.06 5.5 7.03V23H17.5v-7.47c0-1.78-.03-4.08-2.48-4.08-2.48 0-2.86 1.94-2.86 3.95V23H7.22V7z"/>
+          </svg>
+        </a>
+      </div> -->
+    </div>
+    <!--------------------------------------------------- Right Side Column --------------------------------------------------->
+    <div class="flex justify-center items-center relative">
+      <div class="relative">
+        <!-- Glow effect detrás de la imagen -->
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 blur-3xl rounded-full"></div>
+        <Image 
+          alt="Hero" 
+          src={HeroImg} 
+          class="w-[600px] relative z-10 drop-shadow-2xl hover:scale-105 transition-all duration-500 animate-float" 
+        />
+      </div>
+    </div>
+  </div> 
+  </div> 
+  <!-- Icono scroll (abajo centrado) -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+    <a href="#proyectos" class="text-gray-400 hover:text-blue-500 transition-colors text-center">
+      <!-- Flecha hacia abajo con bounce -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
+  </div>
+</section>
+<style is:global>
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(1rem); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+</style>
