@@ -29,7 +29,7 @@ export const proyects = [
     tecnologias: ["Astro", "JavaScript", "TypeScript", "TailwindCSS"],
     imagenes: ["/portfolio.png"],
     categoria: "Platform",
-    enlace: "https://github.com/usuario/plataforma-aprendizaje"
+    enlace: "https://github.com/lmxti/lmxti.github.io"
   },
     {
     name: "ChatPDF",
