@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --nav-height: 80px;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
